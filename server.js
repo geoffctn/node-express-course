@@ -13,7 +13,18 @@ app.get('/users', function(req, res) {
   })
 })
 
+// Get /users/id
+app.get('/users/:id', function(req, res) {
+  console.log(req)
+
+  res.json({
+    success: true,
+    message: 'Got one user',
+    users: req.params.id
+  })
+})
+
 // Run server
-app.listen(function() {
+app.listen(8000, function() {
   console.log('Server is running')
 })
